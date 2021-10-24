@@ -27,8 +27,6 @@ def cal_dist(k, par):
     m2[0] = m2[0]//len(k[1])
     m2[1] = m2[1]//len(k[1])
 
-    # print(m1)
-    # print(m2)
     dist1 = abs(par[0]-m1[0])**2 + abs(par[1]-m1[1])**2
     dist2 = abs(par[0]-m2[0])**2 + abs(par[1]-m2[1])**2
 
@@ -47,15 +45,6 @@ normalise(amount, 1, 50)
 normalise(profit, -50, 50)
 
 
-# print(profit)
-
-# print(amount)
-# amount.sort()
-# amount = list(set(amount))
-
-# profit.sort()
-# profit = list(set(profit))
-
 for i in range(0, len(profit)):
     profit[i] = (profit[i]*10)//amount[i]
 
@@ -70,8 +59,7 @@ j = rand.randint(0, len(final)-1)
 
 
 k = [[final[i]], [final[j]]]
-print("INITIAL ")
-print(k)
+
 flag = 0
 while True:
     temp = [[], []]
@@ -88,17 +76,8 @@ while True:
         k = temp
 
 
-# print(k)
-# for i in range(0, len(final)):
-#     b = cal_dist(k, final[i])
-#     if b == True:
-#         k[0].append(final[i])
-#     else:
-#         k[1].append(final[i])
-
-
 print(k[0])
-print("=========================================================================================")
+print("================================================================================================")
 print(k[1])
 
 x1 = [x[0] for x in k[0]]
@@ -106,11 +85,11 @@ y1 = [x[1] for x in k[0]]
 x2 = [x[0] for x in k[1]]
 y2 = [x[1] for x in k[1]]
 
-# x1.sort()
-# y1.sort()
-# x2.sort()
-# y2.sort()
-plt.scatter(x1, y1, label="k0")
+plt.scatter(x1, y1, label="k2")
 plt.scatter(x2, y2, label="k1")
+
+plt.xlabel("Amount")
+plt.ylabel("Profit/Amount")
+plt.legend()
 
 plt.show()
