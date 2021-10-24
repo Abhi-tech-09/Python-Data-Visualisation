@@ -12,8 +12,8 @@ for i in range(0, len(item)):
     temp = input().strip().split(' ')
     dist.append([float(x) for x in temp])
 
-print(dist)
-print(item)
+# print(dist)
+# print(item)
 
 dmap = {}
 
@@ -66,5 +66,6 @@ while len(item) != 1 :
     # print(item.index(mnt[1]))
     mnt = tuple(mnt)
     item.append(mnt)
+    print(f'\n{item}')
    
-print(item)
+print(f'\nFinal Cluster : {item}')
